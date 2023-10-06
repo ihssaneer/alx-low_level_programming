@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -8,7 +7,7 @@
 */
 int main(void)
 {
-	char charc,
+	char charc;
 
 	for (charc = 'a'; charc <= 'z'; charc++)
 	{
