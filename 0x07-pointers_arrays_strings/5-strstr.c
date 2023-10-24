@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <stdbool.h>
 /**
  * _strstr - function that locates a substring.
  * @haystack: String to be checked.
@@ -11,19 +12,31 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i;
 	unsigned int j;
-	char *tmp = NULL;
+	char *tmp = NULL, *hay, *need;
+	bool same = 0;
 
 	for (i = 0; needle[i] != '\0'; i++)
 	{
-		tmp = needle;
 		for (j = 0; haystack[j] != '\0'; j++)
 		{
 			if (haystack[j] == needle[i])
 			{
-				tmp = &needle[i];
+				tmp = &haystack[j];
+				hay = tmp, need = &needle[i];
+				while (*hay != '\0' && *need != '\0')
+				{
+					if (*hay++ == *need++)
+						{same = 1;
+						continue;
+						}
+					else if (*hay++ != *need++)
+						{same = 0;
+						break;
+						}
+				}
+				if (same == 1)
 				return (tmp);
 			}
-			tmp++;
 		}
 	}
 	tmp = NULL;
