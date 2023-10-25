@@ -29,6 +29,6 @@ int natural_sqr(int n, int i)
 		return (-1);
 	if (n == i * i)
 		return (i);
-	return (natsqr(n, ++i));
+	return (natural_sqr(n, ++i));
 }
 
