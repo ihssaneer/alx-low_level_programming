@@ -14,12 +14,15 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	size = _strlenth(str);
-	if (size == 0)
-		return (NULL);
-	arr = (char *) malloc(sizeof(char) * size);
+	/*
+	*printf("%u", size);
+	*if (size == 0)
+	*	return (NULL);
+	*/
+	arr = (char *) malloc(sizeof(char) * size + 1);
 	if (arr == NULL)
 	{
-		printf("failed to allocate memory\n");
+		printf("failed to allocate memoryy\n");
 		return (NULL);
 	}
 	while (i <= size)
@@ -44,5 +47,6 @@ int _strlenth(char *str)
 	{
 		i++;
 	}
+	/*printf("%u", i);*/
 	return (i);
 }
