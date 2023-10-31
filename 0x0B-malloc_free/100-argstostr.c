@@ -12,24 +12,28 @@ char *argstostr(int ac, char **av)
 	size_t j = 0;
 	char *newstr = NULL;
 
-	if (av == NULL || !ac)
+	if (av == NULL || ac == 0)
 		return (NULL);
 	while (i < ac)
 	{
-		size += strlen(av[i]);
+		if (av[i])
+			size += strlen(av[i]) + 1;
 	}
-	newstr = (char *) malloc(sizeof(char *) * (size + 1));
+	newstr = (char *) malloc(size + 1);
 	if (newstr == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < strlen(av[i]); j++)
+		if (av[i] != NULL)
 		{
-			newstr[z] = av[i][j];
+			for (j = 0; j < strlen(av[i]); j++)
+			{
+				newstr[z] = av[i][j];
+				z++;
+			}
+			newstr[z] = '\n';
 			z++;
-			j++;
 		}
-		newstr[z] = '\n';
 	}
 	newstr[i] = '\0';
 	return (newstr);
