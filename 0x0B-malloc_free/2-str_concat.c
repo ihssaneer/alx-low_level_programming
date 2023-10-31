@@ -1,5 +1,5 @@
 #include "main.h"
-int _strlenth(char *str);
+
 /**
  * str_concat - concatenates two strings.
  * @s1: the 1st string.
@@ -31,20 +31,4 @@ char *str_concat(char *s1, char *s2)
 	}
 	tmp[i] = '\0';
 	return (tmp);
-}
-/**
- * _strlenth - Calculate the lenth of a string.
- * @str: The string to mesure.
- * Return: Returns the lenth of the str.
- */
-int _strlenth(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		i++;
-	}
-	/*printf("%u", i);*/
-	return (i - 1);
 }
