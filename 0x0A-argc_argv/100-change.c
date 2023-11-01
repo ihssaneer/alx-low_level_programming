@@ -8,9 +8,9 @@
 */
 int main(int argc, char *argv[])
 {
-unsigned int cents = 0, change = 0;
+unsigned int change = 0;
 int coins[5] = {25, 10, 5, 2, 1};
-int i = 0;
+int i = 0, cents = 0;
 
 if (argc != 2)
 {
