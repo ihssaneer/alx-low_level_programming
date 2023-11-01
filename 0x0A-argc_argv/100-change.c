@@ -21,7 +21,7 @@ cents = atoi(argv[1]);
 if (cents <= 0)
 {
 printf("0\n");
-return (0);
+return (1);
 }
 for (i = 0; i < 5; i++)
 {
