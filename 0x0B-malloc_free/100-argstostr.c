@@ -8,14 +8,15 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 0, z = 0, size = 0, j = 0;
+	int i = 0;
+	unsigned int z = 0, size = 0, j = 0;
 	char *newstr = NULL;
 
 	if (av == NULL || ac == 0)
 		return (NULL);
 	while (i < ac)
 	{
-		size += (int)strlen(av[i]);
+		size += (unsigned int)strlen(av[i]) + 1;
 		i++;
 	}
 	newstr = (char *)malloc(sizeof(char) * (size + 1));
@@ -23,7 +24,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < (int)strlen(av[i]); j++)
+		for (j = 0; j < (unsigned int)strlen(av[i]); j++)
 		{
 			newstr[z] = av[i][j];
 			z++;
