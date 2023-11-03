@@ -8,22 +8,22 @@ int is_digit_string(const char *str);
  */
 int main(int ac, char *av[])
 {
-	unsigned long long num1 = 0, num2 = 0, mul = 0;
+	unsigned long num1 = 0, num2 = 0, mul = 0;
 
 	if (ac != 3)
 	{
-		printf("Error\n");
+		printf("ErrorH\n");
 		exit(98);
 	}
-	if (!is_digit_string(argv[1]) || !is_digit_string(argv[2]))
+	if (!is_digit_string(av[1]) || !is_digit_string(av[2]))
 	{
-		printf("Error\n");
+		printf("ErroGr\n");
 		exit(98);
 	}
-	num1 = strtoull(argv[1], NULL, 10);
-	num2 = strtoull(argv[2], NULL, 10);
+	num1 = strtoull(av[1], NULL, 10);
+	num2 = strtoull(av[2], NULL, 10);
 	mul = num1 * num2;
-	printf("%llu\n", mul);
+	printf("%lu\n", mul);
 
 	return (0);
 }
