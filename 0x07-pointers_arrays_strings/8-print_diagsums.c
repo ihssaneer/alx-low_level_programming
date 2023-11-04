@@ -15,9 +15,32 @@ void print_diagsums(int *a, int size)
 	while (x < size)
 	{
 		sum1 += a[x * size + x];
-		sum2 += a[x * size + (size - x - 1)];
+		sum2 += a[y * size + (size - (x - 1))];
+{
+        for (i = size - 1, j = 0; j < size ; j++, i--)
+        {
+                sum2 = sum2 + a[j * size +  i];
+        }
+        printf("%d, %d\n", sum1, sum2);
+})];
 		x++;
 	}
 	printf("%u, ", sum1);
 	printf("%u\n", sum2);
+	void print_diagsums(int *a, int size)
+{
+        int i, j;
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (i = 0 ; i < size ; i++)
+        {
+                sum1 = sum1 + a[i * size +  i];
+        }
+        for (i = size - 1, j = 0; j < size ; j++, i--)
+        {
+                sum2 = sum2 + a[j * size +  i];
+        }
+        printf("%d, %d\n", sum1, sum2);
+}
 }
