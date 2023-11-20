@@ -14,34 +14,13 @@ size_t print_listint(const listint_t *h)
 
 	while (h != NULL)
 	{
-		print_int(h->n);
-		_putchar('\n');
+		printf("%d\n");
 		count++;
 		h = h->next;
 	}
 	return (count);
 }
 
-/**
- * print_int - prints integer, followed by new line.
- * @n: the integer to print.
- * return: void.
- */
-void print_int(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-	if (n >= 0)
-	{
-		if ((n / 10) != 0)
-			print_int(n / 10);
-
-		_putchar(n % 10 + '0');
-	}
-}
 /**
  * _putchar - write a character to the stdout.
  * @c: charachter to print.
