@@ -16,7 +16,7 @@ size_t print_listint(const listint_t *h)
 	{
 		print_int(h->n);
 		_putchar('\n');
-		count ++;
+		count++;
 		h = h->next;
 	}
 	return (count);
@@ -24,7 +24,7 @@ size_t print_listint(const listint_t *h)
 
 /**
  * print_int - prints integer, followed by new line.
- * @num: the integer to print.
+ * @n: the integer to print.
  * return: void.
  */
 void print_int(int n)
@@ -46,8 +46,8 @@ void print_int(int n)
  * _putchar - write a character to the stdout.
  * @c: charachter to print.
  * Return: 1 on sucess.
-*/
+ */
 int _putchar(char c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
