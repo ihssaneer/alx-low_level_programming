@@ -11,7 +11,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	if (size == 0)
 		return (NULL);
-	hash_tab = malloc(sizeof(hash_table_t *) * size);
+	hash_tab = malloc(sizeof(hash_table_t));
 	if (hash_tab == NULL)
 		return (NULL);
 	hash_tab->size = size;
