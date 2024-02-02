@@ -8,16 +8,16 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = -1;
+	unsigned long int index = 0;
 	hash_node_t *tmp = NULL;
 
-	if (ht == NULL || key == NULL)
+	if (!ht || !key || !*key)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->array[index];
 	while (tmp)
 	{
-		if (!strncmp(key, tmp->key, strlen(tmp->key) + 1))
+		if (!strncmp(key, tmp->key, (strlen(tmp->key) + 1)))
 		{
 			free(tmp->value);
 			tmp->value = strdup(value);
